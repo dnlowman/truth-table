@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Header from './Header';
-import extractVariables from '../selectors/extractVariables';
+import getVariables from '../selectors/getVariables';
 
 const mapStateToProps = (state) => {
   return {
-    columnNames: extractVariables(state.expression)
+    columnNames: getVariables(state.expression)
   };
 };
 

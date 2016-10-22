@@ -1,11 +1,11 @@
 import React from 'react';
 import Body from './Body';
-import extractVariables from '../selectors/extractVariables';
+import getVariables from '../selectors/getVariables';
 import { connect } from 'react-redux';
 import getPermutations from '../selectors/getPermutations';
 
 const mapStateToProps = (state) => {
-  const pins = extractVariables(state.expression);
+  const pins = getVariables(state.expression);
 
   return {
     pins: getPermutations(pins),

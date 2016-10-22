@@ -1,4 +1,4 @@
-import extractVariables from './extractVariables';
+import getVariables from './getVariables';
 
 describe('The extractVariables function', () => {
   it('should extract out the distinct variables in the expression', () => {
@@ -6,7 +6,7 @@ describe('The extractVariables function', () => {
     const expression = '(x || y) || (!x && z)';
 
     // When
-    const result = extractVariables(expression);
+    const result = getVariables(expression);
 
     // Then
     expect(result.length).toBe(3);

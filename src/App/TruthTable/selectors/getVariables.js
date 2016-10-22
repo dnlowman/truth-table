@@ -1,6 +1,6 @@
 import { List } from 'immutable';
 
-export default function extractVariables(expression) {
+export default function getVariables(expression) {
   const variables = List.of(...expression.split(''));
   return variables.filter(variable => {
                     const charCode = variable.charCodeAt(0);
