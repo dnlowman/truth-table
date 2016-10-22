@@ -1,4 +1,7 @@
 export default function getPermutations(variables) {
+  if(variables.length === 0)
+    return [];
+
   const maxNumber = Math.pow(2, variables.length);
   const permutations = [];
 
