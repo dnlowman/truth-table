@@ -5,17 +5,19 @@ import { connect } from 'react-redux';
 import getPermutations from '../selectors/getPermutations';
 
 const mapStateToProps = (state) => {
-  const pins = getVariables(state.expression);
+  const variables = getVariables(state.expression);
 
   return {
-    pins: getPermutations(pins),
-    variables: pins,
+    variableValues: getPermutations(variables),
     booleanFunction: (variableValues) => {
-      let expression = state.expression;
+      const expression = variables.reduce((expression, variable) => expression.replace(variable, `${variableValues[variable]}`), state.expression);
 
-      pins.forEach(pin => expression = expression.replace(pin, `${variableValues[pin]}`));
-
-      return eval(expression) ? 1 : 0;
+      try {
+        return eval(expression) ? 1 : 0;
+      }
+      catch(e) {
+        return 0;
+      }
     }
   };
 };

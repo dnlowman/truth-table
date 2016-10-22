@@ -9,10 +9,17 @@ it('should create all of the binary permutations for two variables', () => {
 
   // Then
   expect(result.length).toBe(4);
-  expect(result[0]).toBe('00');
-  expect(result[1]).toBe('01');
-  expect(result[2]).toBe('10');
-  expect(result[3]).toBe('11');
+  expect(result[0].a).toBe(0);
+  expect(result[0].b).toBe(0);
+
+  expect(result[1].a).toBe(0);
+  expect(result[1].b).toBe(1);
+
+  expect(result[2].a).toBe(1);
+  expect(result[2].b).toBe(0);
+
+  expect(result[3].a).toBe(1);
+  expect(result[3].b).toBe(1);
 });
 
 it('should create all of the binary permutations for three variables', () => {
@@ -24,13 +31,36 @@ it('should create all of the binary permutations for three variables', () => {
 
   // Then
   expect(result.length).toBe(8);
-  // 4 2 1
-  expect(result[0]).toBe('000');
-  expect(result[1]).toBe('001');
-  expect(result[2]).toBe('010');
-  expect(result[3]).toBe('011');
-  expect(result[4]).toBe('100');
-  expect(result[5]).toBe('101');
-  expect(result[6]).toBe('110');
-  expect(result[7]).toBe('111');
+
+  expect(result[0].a).toBe(0);
+  expect(result[0].b).toBe(0);
+  expect(result[0].c).toBe(0);
+
+  expect(result[1].a).toBe(0);
+  expect(result[1].b).toBe(0);
+  expect(result[1].c).toBe(1);
+
+  expect(result[2].a).toBe(0);
+  expect(result[2].b).toBe(1);
+  expect(result[2].c).toBe(0);
+
+  expect(result[3].a).toBe(0);
+  expect(result[3].b).toBe(1);
+  expect(result[3].c).toBe(1);
+
+  expect(result[4].a).toBe(1);
+  expect(result[4].b).toBe(0);
+  expect(result[4].c).toBe(0);
+
+  expect(result[5].a).toBe(1);
+  expect(result[5].b).toBe(0);
+  expect(result[5].c).toBe(1);
+
+  expect(result[6].a).toBe(1);
+  expect(result[6].b).toBe(1);
+  expect(result[6].c).toBe(0);
+
+  expect(result[7].a).toBe(1);
+  expect(result[7].b).toBe(1);
+  expect(result[7].c).toBe(1);
 });

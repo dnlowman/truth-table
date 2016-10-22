@@ -9,5 +9,11 @@ export default function getPermutations(variables) {
       permutations[i] = '0' + permutations[i];
   }
 
-  return permutations;
+  return permutations.map(permutation => {
+    return permutation.split('')
+                      .reduce((prev, value, index) => {
+                        prev[variables[index]] = parseInt(value);
+                        return prev;
+                      }, {});
+  });
 }

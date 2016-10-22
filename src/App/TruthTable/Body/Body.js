@@ -8,32 +8,28 @@ const Row = styled.tr`
   color: palevioletred;
 `;
 
-const Body = ({ pins, variables, booleanFunction }) => {
-
-  let test = pins.map(pin => pin.split("").map(bit => parseInt(bit)));
-
+const Body = ({ variableValues, booleanFunction }) => {
   return (
     <tbody>
       {
-        test.map(pin => {
-          const expression = {};
-          variables.forEach((variable, index) => expression[variable] = pin[index]);
-
-          return (
-            <Row key={shortid.generate()}>
-              { pin.map(pin => <td key={shortid.generate()}>{pin}</td>) }
-              <td>{ booleanFunction(expression) }</td>
-            </Row>
-          );
-        })
+        variableValues.map(variableValue => {
+                        return (
+                          <Row key={shortid.generate()}>
+                            {
+                              Object.keys(variableValue)
+                                    .map(key => <td key={shortid.generate()}>{variableValue[key]}</td>)
+                            }
+                            <td>{ booleanFunction(variableValue) }</td>
+                          </Row>
+                        );
+                      })
       }
     </tbody>
   );
 };
 
 Body.PropTypes = {
-  pins: PropTypes.array.isRequired,
-  variables: PropTypes.array.isRequired,
+  variableValues: PropTypes.array.isRequired,
   booleanFunction: PropTypes.func.isRequired
 };
 
