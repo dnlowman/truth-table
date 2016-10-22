@@ -18,7 +18,6 @@ const Body = ({ pins, variables, booleanFunction }) => {
         test.map(pin => {
           const expression = {};
           variables.forEach((variable, index) => expression[variable] = pin[index]);
-          console.log(expression);
 
           return (
             <Row key={shortid.generate()}>
