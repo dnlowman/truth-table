@@ -1,12 +1,6 @@
 import React, { PropTypes } from 'react';
 import shortid from 'shortid';
-import styled from 'styled-components';
-
-const Row = styled.tr`
-  font-size: 1.5em;
-  text-align: center;
-  color: palevioletred;
-`;
+import Row from './Row';
 
 const Body = ({ variableValues, booleanFunction }) => {
   return (
