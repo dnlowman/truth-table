@@ -6,7 +6,7 @@ import Function from '../Function';
 const Row = styled.tr`
   font-size: 1.5em;
   text-align: center;
-  color: palevioletred;
+  color: chocolate;
 `;
 
 const Header = ({ columnNames }) => {

@@ -8,8 +8,9 @@
   "scripts": {
     "precompile": "yarn run clean",
     "compile": "webpack --progress",
+    "compile:dev": "webpack --config webpack.dev.config.babel.js --progress",
     "clean": "rimraf dist",
-    "serve": "webpack-dev-server",
+    "start": "webpack-dev-server",
     "test": "jest"
   },
   "devDependencies": {

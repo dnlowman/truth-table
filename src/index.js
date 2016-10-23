@@ -11,7 +11,7 @@ const store = configureStore({});
 ReactDOM.render(
   <Provider store={store}>
     <div>
-      <DevTools />
+      { process.env.NODE_ENV !== 'production' && <DevTools /> }
       <App />
     </div>
   </Provider>,

@@ -1,6 +1,5 @@
 import { resolve } from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import webpack from 'webpack';
 
 export default {
   context: resolve('./src'),
@@ -17,18 +16,6 @@ export default {
   plugins: [
     new HtmlWebpackPlugin({
       template: './index.html'
-    }),
-    new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.OccurrenceOrderPlugin(true),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-          warnings: false
-      }
-    }),
-    new webpack.DefinePlugin({
-      'process.env':{
-        'NODE_ENV': JSON.stringify('production')
-      }
     })
   ],
   devServer: {
