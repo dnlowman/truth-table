@@ -1,7 +1,7 @@
 ![truth-table](http://i.imgur.com/G4KSUau.png)
 
 #Introduction
-This is a little implementation of a Boolean Truth Table. You can type in a boolean expression inbetween the function `f()` and the different permutations of each variable along with its output will be displayed!
+This is a little implementation of a Boolean Truth Table. You can type in a boolean expression inbetween the function `f()` and the permutations of each variable along with its output will be displayed!
 
 The performance degrades depending on the amount of variables, hopefully I'll get around to improving this but for now I'm relying on doing a bitshift of 0 and using `toString(2)` to get it into a base 2 string then having to prepend 0's if the length of the output is not equal to the amount of variables.
 
